@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>R y T - David Barrera</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="images/favicon.png">
 </head>
@@ -15,7 +15,7 @@
 <body onresize="drawCharts()">
     <div class="container">
         <div class="jumbotron">
-            <h1>Reflectancia y Transmitancia</h1>
+            <h1>Coeficientes de reflexión y transmisión</h1>
             <!--<p>Gráficas de-->
                 <!--$$-->
                     <!--\left(\frac{E_{r}}{E_{i}}\right)_{\bot} ,-->
@@ -24,57 +24,212 @@
                     <!--\left(\frac{E_{t}}{E_{i}}\right)_{\parallel}-->
                 <!--$$-->
             <!--</p>-->
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\bot}$$</h3>
+            <div class="card">
+                <div class="card-heading">
+                    <h3 class="card-title">Agregar</h3>
                 </div>
-                <div class="panel-body">
-                    <div id="r_per" class="chart-panel"></div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="medio_1_selector" id="medio_1_label">Medio 1</label>
+                                    </div>
+                                    <select class="custom-select"    id="medio_1_selector">
+                                        <option selected value="null">Selecciona uno...</option>
+                                        <option value="1.54">Ágata</option>
+                                        <option value="1.60">Aguamarina</option>
+                                        <option value="1.54">Amatista</option>
+                                        <option value="1.55">Ámbar</option>
+                                        <option value="3.927">Arseniuro de galio</option>
+                                        <option value="1.60">Berilo</option>
+                                        <option value="2.0668">Cloruro de plata</option>
+                                        <option value="1.544">Cloruro de sodio</option>
+                                        <option value="1.3375">Córnea humana</option>
+                                        <option value="1.338">Criolita</option>
+                                        <option value="1.406">Cristalino humano</option>
+                                        <option value="1.544">Cuarzo SiO2</option>
+                                        <option value="2.417">Diamante</option>
+                                        <option value="2.496">Dióxido de titanio</option>
+                                        <option value="1.582">Esmeralda</option>
+                                        <option value="1.43">Fluoruro de calcio (Fluorita)</option>
+                                        <option value="1.53">Fosfato de aluminio</option>
+                                        <option value="3.5">Fosfuro de galio</option>
+                                        <option value="4.01">Germanio</option>
+                                        <option value="1.309">Hielo</option>
+                                        <option value="1.5">Lapislázuli</option>
+                                        <option value="1.909">Malaquita</option>
+                                        <option value="1.491">Polimetil metacrilato</option>
+                                        <option value="1.53">Nylon</option>
+                                        <option value="1.50">Obsidiana</option>
+                                        <option value="1.45">Ópalo</option>
+                                        <option value="1.76">Óxido de aluminio</option>
+                                        <option value="2.4">Óxido de cinc</option>
+                                        <option value="1.575">PET</option>
+                                        <option value="1.585">Policarbonato</option>
+                                        <option value="1.59">Poliestireno</option>
+                                        <option value="1.77">Rubí</option>
+                                        <option value="4.01">Silicio</option>
+                                        <option value="1.36">Teflón</option>
+                                        <option value="1.606">Topacio</option>
+                                        <option value="1.675">Turmalina</option>
+                                        <option value="1.61">Turquesa</option>
+                                        <option value="1.52">Vidrio Crown</option>
+                                        <option value="1.66">Vidrio Flint denso</option>
+                                        <option value="1.58">Vidrio Flint ligero</option>
+                                        <option value="1.62">Vidrio Flint medio</option>
+                                        <option value="1.470">Vidrio Pirex</option>
+                                        <option value="3.34">Yodo</option>
+                                        <option value="1.778">Zafiro</option>
+                                        <option value="1.923">Zircón</option>
+                                        <option value="2.18">Zirconia cúbica</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="medio_1_selector" id="medio_2_label">Medio 2</label>
+                                    </div>
+                                    <select class="custom-select"    id="medio_2_selector">
+                                        <option selected value="null">Selecciona uno...</option>
+                                        <option value="1.54">Ágata</option>
+                                        <option value="1.60">Aguamarina</option>
+                                        <option value="1.54">Amatista</option>
+                                        <option value="1.55">Ámbar</option>
+                                        <option value="3.927">Arseniuro de galio</option>
+                                        <option value="1.60">Berilo</option>
+                                        <option value="2.0668">Cloruro de plata</option>
+                                        <option value="1.544">Cloruro de sodio</option>
+                                        <option value="1.3375">Córnea humana</option>
+                                        <option value="1.338">Criolita</option>
+                                        <option value="1.406">Cristalino humano</option>
+                                        <option value="1.544">Cuarzo SiO2</option>
+                                        <option value="2.417">Diamante</option>
+                                        <option value="2.496">Dióxido de titanio</option>
+                                        <option value="1.582">Esmeralda</option>
+                                        <option value="1.43">Fluoruro de calcio (Fluorita)</option>
+                                        <option value="1.53">Fosfato de aluminio</option>
+                                        <option value="3.5">Fosfuro de galio</option>
+                                        <option value="4.01">Germanio</option>
+                                        <option value="1.309">Hielo</option>
+                                        <option value="1.5">Lapislázuli</option>
+                                        <option value="1.909">Malaquita</option>
+                                        <option value="1.491">Polimetil metacrilato</option>
+                                        <option value="1.53">Nylon</option>
+                                        <option value="1.50">Obsidiana</option>
+                                        <option value="1.45">Ópalo</option>
+                                        <option value="1.76">Óxido de aluminio</option>
+                                        <option value="2.4">Óxido de cinc</option>
+                                        <option value="1.575">PET</option>
+                                        <option value="1.585">Policarbonato</option>
+                                        <option value="1.59">Poliestireno</option>
+                                        <option value="1.77">Rubí</option>
+                                        <option value="4.01">Silicio</option>
+                                        <option value="1.36">Teflón</option>
+                                        <option value="1.606">Topacio</option>
+                                        <option value="1.675">Turmalina</option>
+                                        <option value="1.61">Turquesa</option>
+                                        <option value="1.52">Vidrio Crown</option>
+                                        <option value="1.66">Vidrio Flint denso</option>
+                                        <option value="1.58">Vidrio Flint ligero</option>
+                                        <option value="1.62">Vidrio Flint medio</option>
+                                        <option value="1.470">Vidrio Pirex</option>
+                                        <option value="3.34">Yodo</option>
+                                        <option value="1.778">Zafiro</option>
+                                        <option value="1.923">Zircón</option>
+                                        <option value="2.18">Zirconia cúbica</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <input type='color' id='colorSelector' value='#3355cc' class="col-sm-12 col-md-3 mt-3 ml-3 align-self-center"/>
+                            <button type="button" class="btn btn-primary mt-3 ml-3 col-sm-12 col-md-3 " id="addBtn">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-default">
+                <div class="card-body">
+                    <ul class="list-group" id="mediosSeleccionados">
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\bot}$$</h3>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="card card-default">
+                    <div class="card-heading">
+                        <h5 class="card-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\bot}$$</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <div class="chart-card">
+                                <div id="r_per"></div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <div id="t_per" class="chart-panel"></div>
+            </div>
+            <div class="col-xs-12 col-md-12">
+                <div class="card card-default">
+                    <div class="card-heading">
+                        <h5 class="card-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\bot}$$</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <div class="chart-card">
+                                <div id="t_per"></div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\parallel}$$</h3>
-                </div>
-                <div class="panel-body">
-                    <div id="r_par" class="chart-panel"></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="card card-default">
+                    <div class="card-heading">
+                        <h5 class="card-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\parallel}$$</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body">
+                            <div class="chart-card">
+                                <div id="r_par"></div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\parallel}$$</h3>
-                </div>
-                <div class="panel-body">
-                    <div id="t_par" class="chart-panel"></div>
+            <div class="col-xs-12 col-md-12">
+                <div class="card card-default">
+                    <div class="card-heading">
+                        <h5 class="card-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\parallel}$$</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-card">
+                            <div id="t_par"></div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript" async
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    <script src="js/bootstrap.min.js" ></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/mine.js"></script>
 </body>
