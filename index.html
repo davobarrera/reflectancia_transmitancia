@@ -6,16 +6,77 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title></title>
-
+  <title>R y T - David Barrera</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="images/favicon.png">
 </head>
 
-<body>
+<body onresize="drawCharts()">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Reflectancia y Transmitancia</h1>
+            <!--<p>Gráficas de-->
+                <!--$$-->
+                    <!--\left(\frac{E_{r}}{E_{i}}\right)_{\bot} ,-->
+                    <!--\left(\frac{E_{t}}{E_{i}}\right)_{\bot} ,-->
+                    <!--\left(\frac{E_{r}}{E_{i}}\right)_{\parallel} ,-->
+                    <!--\left(\frac{E_{t}}{E_{i}}\right)_{\parallel}-->
+                <!--$$-->
+            <!--</p>-->
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\bot}$$</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="r_per" class="chart-panel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\bot}$$</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="t_per" class="chart-panel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">$$  \left(\frac{E_{r}}{E_{i}}\right)_{\parallel}$$</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="r_par" class="chart-panel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">$$  \left(\frac{E_{t}}{E_{i}}\right)_{\parallel}$$</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="t_par" class="chart-panel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="js/scripts.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/mine.js"></script>
 </body>
 
 </html>
